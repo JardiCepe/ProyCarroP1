@@ -4,6 +4,37 @@ public class Carro {
     private int potencia;
     private double velocidad;
 
+
+    // Atributo de clase
+    private static int numCarros = 0;
+
+    // Constante de clase
+
+    private static final double IVA = 0.12;
+
+    public Carro(int potencia, double velocidad){
+        /*
+        this.potencia = potencia;
+        this.velocidad = velocidad;
+         */
+
+        ;
+
+        // si se validan datos llamo a los et
+
+        setVelocidad(velocidad);
+        setPotencia(potencia);
+
+        // Suma el contador
+
+        numCarros ++;
+
+    }
+
+    public Carro(){
+
+    }
+
     /*
     métodos para ingresar información
     set()
@@ -41,6 +72,18 @@ public class Carro {
         return velocidad;
     }
 
+    public static int getNumCarros(){
+        return numCarros;
+    }
+
+    public static double getIva(){
+        return IVA;
+    }
+
+    public double calcularPrecioVenta(double precio){
+        return precio + (precio * IVA);
+    }
+
     public void acelerar(){
 
         velocidad += potencia;
@@ -50,4 +93,6 @@ public class Carro {
 
         velocidad /= 2;
     }
+
+
 }
